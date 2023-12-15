@@ -2,50 +2,68 @@
   --light: #fff1f6f1;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100dvh;
+  width: 100dvw;
+  height: 100%;
   margin: 0;
   color: var(--light);
-  background: linear-gradient(to bottom right, #a93b63d1, #481548d1, #372675d1),
+  background-image: linear-gradient(to bottom right, #0000003f, #22222241),
+    linear-gradient(to bottom right, #a93b63d1, #481548d1, #372675d1),
     url("./assets/bg-image.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 8px;
   overflow: hidden;
 }
 
-.form-container {
-  background-color: #20153b5f;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+.container {
+  display: flex;
 }
 
-.form-container h2 {
-  margin: 10px;
+#loginForm,
+#signupForm {
+  border: none;
+  background-color: #2c1c515f;
+  padding: 60px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
   color: var(--light);
   font-weight: 600;
-  text-align: center;
+  margin-bottom: 30px;
 }
 
-.form {
+p,
+label {
   font-size: 12px;
-  display: flex;
-  flex-direction: column;
+  color: var(--light);
+  display: inline-block;
 }
 
-.form input {
-  margin-top: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+input,
+button {
+  height: 35px;
+  padding: 3px;
+  width: 100%;
+  display: block;
+  margin-bottom: 25px;
   border: 1.5px solid #fff1f625;
   border-radius: 10px;
   background-color: #fff1f620;
@@ -54,93 +72,34 @@ body {
   padding-left: 20px;
 }
 
-input::placeholder {
-  color: #fff1f641;
-}
-
-input:focus {
-  border: 1.5px solid #fff1f6a9;
+button {
+  background-color: #a93b63;
+  border: none;
+  color: var(--light);
+  font-size: 16px;
 }
 
 input[type="checkbox"] {
-  color: var(--light);
+  color: var(--xlight);
   accent-color: #fff1f625;
   width: 14px;
   height: 14px;
   border: 1.5px solid #fff1f625;
   border-radius: 10px;
   outline: none;
-  display: inline;
-  margin-top: 1px;
 }
 
-.remember-forgot {
-  margin-top: 10px;
+input:focus {
+  border: 1.5px solid #fff1f6a9;
+}
+
+input::placeholder {
+  color: #fff1f641;
+  /* padding-left: 4px; */
+}
+
+.additional-credentials {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.remember-forgot label {
-  display: flex;
-  align-items: center;
-}
-
-.form button {
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  background-color: #a93b63;
-  border: none;
-  color: var(--light);
-  font-size: 16px;
-  border-radius: 10px;
-}
-
-a {
-  color: var(--light);
-  text-align: right;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-p {
-  text-align: center;
-}
-
-.signup-container {
-  display: none;
-}
-
-/* Style for the custom alert */
-.custom-alert {
-  font-size: 14px;
-  display: none;
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px;
-  background-color: #481548;
-  color: #fff;
-  border-radius: 4px;
-  text-align: center;
-  z-index: 1000;
-  animation: fadeInOut 2s forwards; /* Animation duration */
-}
-
-/* Animation to fade in and out the custom alert */
-@keyframes fadeInOut {
-  0%,
-  100% {
-    opacity: 0;
-    display: none;
-  }
-  5%,
-  95% {
-    opacity: 1;
-    display: block;
-  }
 }

@@ -10,67 +10,63 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Login & Sign Up Form</title>
+    <title>Login and Signup</title>
   </head>
   <body>
-    <!-- --------------------Login form-------------------------------- -->
-    <div class="form-container login-container" id="loginFormContainer">
-      <h2>Login</h2>
-      <form
-        class="login-form form"
-        onsubmit="return loginUser(event)"
-        id="loginForm"
-      >
-        <input type="text" placeholder="Username" id="loginUsername" required />
-        <input
-          type="password"
-          placeholder="Password"
-          id="loginPassword"
-          required
-        />
-        <div class="remember-forgot">
-          <label> <input type="checkbox" /> Remember Me </label>
-          <a href="#" class="forgot-password">Forgot Password?</a>
-        </div>
-        <button type="submit">Login</button>
-        <p>Don't have an Account?<a onclick="toggleForms()"> Register</a></p>
-      </form>
+    <div class="container">
+      <div id="loginForm">
+        <h2>Login</h2>
+        <form onsubmit="return loginUser()">
+          <input
+            type="text"
+            id="loginUsername"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            required
+          />
+          <div class="additional-credentials">
+            <div style="vertical-align: center">
+              <input type="checkbox" class="checkbox" id="remember-user" />
+              <label for="Remember">Remember Me</label>
+            </div>
+            <p>Forgot Password?</p>
+          </div>
+          <button type="submit">Login</button>
+          <div>
+            <p>
+              Don't have an Account?
+              <span style="text-decoration: underline"> Register</span>
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <div id="signupForm" hidden>
+        <h2>Sign Up</h2>
+        <form onsubmit="return signupUser()">
+          <input
+            type="text"
+            id="signupUsername"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Password"
+            required
+          />
+
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
     </div>
 
-    <!-- --------------------SignUp form-------------------------------- -->
-    <div class="form-container signup-container" id="signupFormContainer">
-      <h2>Signup</h2>
-      <form class="signup-form form" onsubmit="signupUser()" id="signupForm">
-        <input
-          type="text"
-          placeholder="Username"
-          id="signupUsername"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          id="signupPassword"
-          onchange="validatePassword(event)"
-          required
-        />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          id="signupConfirmPassword"
-          onchange="validatePassword(event)"
-          required
-        />
-        <!-- <p class="validation-text" id="validation"></p> -->
-        <button type="submit">Register</button>
-        <p>
-          Already have an account? <a onclick="toggleForms()"> Login here.</a>
-        </p>
-      </form>
-    </div>
-
-    <!-- Custom alert element -->
-    <div class="custom-alert" id="customAlert"></div>
     <script src="script.js"></script>
   </body>
 </html>
