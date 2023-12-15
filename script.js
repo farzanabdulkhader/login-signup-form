@@ -3,10 +3,14 @@ const password = document.getElementById("signupPassword").value;
 const confirmPassword = document.getElementById("signupConfirmPassword").value;
 
 function signupUser() {
-  let userSignupData = [];
+  const username = document.getElementById("signupUsername").value;
+  const password = document.getElementById("signupPassword").value;
+  const confirmPassword = document.getElementById(
+    "signupConfirmPassword"
+  ).value;
+  // let userSignupData = [];
   if (password !== confirmPassword) {
     showCustomAlert("Signin unsuccessfull. Password doesn't match.");
-    return;
   } else {
     // Step 1: Retrieve existing data from localStorage
     const existingUserDataString = localStorage.getItem("userData");
@@ -30,7 +34,7 @@ function signupUser() {
 
     showCustomAlert("Sign Up Successfull😊");
     document.getElementById("signupForm").reset();
-    toggleForms();
+    // toggleForms();
   }
 }
 
