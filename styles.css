@@ -118,6 +118,7 @@ p {
 .validation-text {
   color: rgb(255, 111, 111);
   margin-left: 10px;
+  margin-top: 5px;
 }
 
 .signup-container {
