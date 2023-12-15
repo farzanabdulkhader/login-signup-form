@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login & Sign Up Form</title>
+  </head>
+  <body>
+    <!-- --------------------Login form-------------------------------- -->
+    <div class="form-container login-container" id="loginFormContainer">
+      <h2>Login</h2>
+      <form
+        class="login-form form"
+        onsubmit="return loginUser(event)"
+        id="loginForm"
+      >
+        <input type="text" placeholder="Username" id="loginUsername" required />
+        <input
+          type="password"
+          placeholder="Password"
+          id="loginPassword"
+          required
+        />
+        <div class="remember-forgot">
+          <label> <input type="checkbox" /> Remember Me </label>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <button type="submit">Login</button>
+        <p>Don't have an Account?<a onclick="toggleForms()"> Register</a></p>
+      </form>
+    </div>
+
+    <!-- --------------------SignUp form-------------------------------- -->
+    <div class="form-container signup-container" id="signupFormContainer">
+      <h2>Signup</h2>
+      <form class="signup-form form" onsubmit="signupUser()" id="signupForm">
+        <input
+          type="text"
+          placeholder="Username"
+          id="signupUsername"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          id="signupPassword"
+          onchange="validatePassword(event)"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          id="signupConfirmPassword"
+          onchange="validatePassword(event)"
+          required
+        />
+        <!-- <p class="validation-text" id="validation"></p> -->
+        <button type="submit">Register</button>
+        <p>
+          Already have an account? <a onclick="toggleForms()"> Login here.</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- Custom alert element -->
+    <div class="custom-alert" id="customAlert"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

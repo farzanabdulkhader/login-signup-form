@@ -1,0 +1,146 @@
+:root {
+  --light: #fff1f6f1;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  color: var(--light);
+  background: linear-gradient(to bottom right, #a93b63d1, #481548d1, #372675d1),
+    url("./assets/bg-image.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 8px;
+  overflow: hidden;
+}
+
+.form-container {
+  background-color: #20153b5f;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-container h2 {
+  margin: 10px;
+  color: var(--light);
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  border: 1.5px solid #fff1f625;
+  border-radius: 10px;
+  background-color: #fff1f620;
+  color: var(--light);
+  outline: none;
+  padding-left: 20px;
+}
+
+input::placeholder {
+  color: #fff1f641;
+}
+
+input:focus {
+  border: 1.5px solid #fff1f6a9;
+}
+
+input[type="checkbox"] {
+  color: var(--light);
+  accent-color: #fff1f625;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid #fff1f625;
+  border-radius: 10px;
+  outline: none;
+  display: inline;
+  margin-top: 1px;
+}
+
+.remember-forgot {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.remember-forgot label {
+  display: flex;
+  align-items: center;
+}
+
+.form button {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #a93b63;
+  border: none;
+  color: var(--light);
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+a {
+  color: var(--light);
+  text-align: right;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p {
+  text-align: center;
+}
+
+.signup-container {
+  display: none;
+}
+
+/* Style for the custom alert */
+.custom-alert {
+  font-size: 14px;
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #481548;
+  color: #fff;
+  border-radius: 4px;
+  text-align: center;
+  z-index: 1000;
+  animation: fadeInOut 2s forwards; /* Animation duration */
+}
+
+/* Animation to fade in and out the custom alert */
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0;
+    display: none;
+  }
+  5%,
+  95% {
+    opacity: 1;
+    display: block;
+  }
+}
