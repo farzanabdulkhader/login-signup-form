@@ -8,8 +8,11 @@ function signupUser(event) {
     "signupConfirmPassword"
   ).value;
 
+  const signupValidate = document.getElementById("signupValidation");
+  signupValidate.textContent = "";
+
   if (password !== confirmPassword) {
-    showCustomAlert("Signin unsuccessfull. Password doesn't match.");
+    signupValidate.textContent = "❗Password doesn't match";
     return;
   } else {
     // Step 1: Retrieve existing data from localStorage
@@ -19,7 +22,8 @@ function signupUser(event) {
       : [];
     //check for duplicate data
     if (existingUserData.some((item) => item.username === username)) {
-      showCustomAlert("Username already exists. Try loging in");
+      // showCustomAlert("Username already exists. Try loging in");
+      signupValidate.textContent = "Username already exists. Try loging in";
       return;
     }
     // Step 2: Add new user data to existing data
@@ -42,14 +46,16 @@ function signupUser(event) {
 
 function loginUser(event) {
   event.preventDefault();
-  console.log("login function called");
+
+  const loginValidate = document.getElementById("loginValidation");
+  loginValidate.textContent = "";
 
   // Retrieve user data from localStorage
   const storedUserDataString = localStorage.getItem("userData");
 
   // Check if there is any stored user data
   if (!storedUserDataString) {
-    showCustomAlert("User not found. Please sign up.");
+    showCustomAlert("User not found. Please Register.");
     return;
   }
 
@@ -64,18 +70,18 @@ function loginUser(event) {
   const user = storedUserData.find((user) => user.username === inputUsername);
 
   if (!user) {
-    showCustomAlert("User not found. Please check your username.");
+    loginValidate.textContent = "❗User not found. Please check your username.";
     return;
   }
 
   // Check if the provided password matches the stored password
   if (user.password !== inputPassword) {
-    showCustomAlert("Incorrect password. Please try again.");
+    loginValidate.textContent = "❗Incorrect password. Please try again.";
     return;
   }
 
   // User is authenticated, show success message
-  showCustomAlert("Login successful. Welcome, " + user.username + "!");
+  showCustomAlert("Login successful. Welcome, " + user.username + "!" + "👋🏻");
   document.getElementById("loginForm").reset();
 }
 

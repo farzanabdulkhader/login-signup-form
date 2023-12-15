@@ -32,6 +32,7 @@
           <label> <input type="checkbox" /> Remember Me </label>
           <a href="#" class="forgot-password">Forgot Password?</a>
         </div>
+        <span class="validation-text" id="loginValidation"></span>
         <button type="submit">Login</button>
         <p>Don't have an Account?<a onclick="toggleForms()"> Register</a></p>
       </form>
@@ -59,8 +60,8 @@
           id="signupConfirmPassword"
           required
         />
-        <!-- <p class="validation-text" id="validation"></p> -->
-        <button type="submit" onclick="signupUser()">Register</button>
+        <span class="validation-text" id="signupValidation"></span>
+        <button type="submit">Register</button>
         <p>
           Already have an account? <a onclick="toggleForms()"> Login here.</a>
         </p>

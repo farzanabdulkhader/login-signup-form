@@ -115,6 +115,10 @@ a {
 p {
   text-align: center;
 }
+.validation-text {
+  color: rgb(255, 111, 111);
+  margin-left: 10px;
+}
 
 .signup-container {
   display: none;
